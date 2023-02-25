@@ -19,12 +19,14 @@ function playGame() {
   } else {
     console.log('Computer wins!');
   }
+  return computerChoice;
 }
-
 playGame();
 
 
-
+for (let i = 1; i <= 5; i++) {
+    playGame();
+  }
 
     
 
