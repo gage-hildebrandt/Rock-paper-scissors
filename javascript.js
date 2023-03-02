@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = 'black';
+
 const choices = ['rock', 'paper', 'scissors'];
 
 function computerChoice() {
@@ -6,27 +8,52 @@ function computerChoice() {
 }
 
 function playGame() {
-  let playerChoice = prompt('Rock, Paper, or Scissors?').toLowerCase();
+  let playerChoice = ('Rock, Paper, or Scissors?').toLowerCase();
   let computer = computerChoice();
+}
   
   // add if/else statement to determine winner
+function result() {
   if (playerChoice === computer) {
-    console.log('It is a tie');
+    alert('It is a tie');
   } else if (playerChoice === 'rock' && computer === 'scissors' ||
              playerChoice === 'paper' && computer === 'rock' ||
              playerChoice === 'scissors' && computer === 'paper') {
-    console.log('You win!');
+    alert('You win!');
   } else {
-    console.log('Computer wins!');
+    alert('Computer wins!');
   }
   return computerChoice;
 }
-playGame();
 
+const resultDiv = document.createElement('div');
+  resultDiv.id = 'result';
+  document.body.appendChild(resultDiv);
 
-for (let i = 1; i <= 5; i++) {
-    playGame();
-  }
+  // playGame();
+
+const button1 = document.createElement('button');
+  button1.textContent = 'Rock';
+  button1.addEventListener('click', function() {
+  alert('You chose Rock!');
+});
+  document.body.appendChild(button1);
+
+const button2 = document.createElement('button');
+  button2.textContent = 'Paper';
+  button2.addEventListener('click', function() {
+  alert('You chose Paper!');
+});
+  document.body.appendChild(button2);
+
+const button3 = document.createElement('button');
+  button3.textContent = 'Scissors';
+  button3.addEventListener('click', function() {
+  alert('You chose Scissors!');
+});
+  document.body.appendChild(button3);
+
+  resultDiv.textContent = result;
 
     
 
